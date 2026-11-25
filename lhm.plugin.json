@@ -1,7 +1,7 @@
 {
   "identifier": "perpetio-redlinejs-mcp",
   "name": "RedlineJS",
-  "version": "2.9.0",
+  "version": "2.9.1",
   "description": "Visual website feedback for coding agents. Reviewers comment on the live page; Claude Code, Codex, Cursor or any other MCP client reads each comment with the exact element attached, replies, fixes it and marks it resolved.",
   "author": "Perpetio OÜ",
   "authorUrl": "https://redlinejs.com",
