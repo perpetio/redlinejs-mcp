@@ -1,0 +1,56 @@
+Redline
+Copyright (c) 2026 Perpetio OÜ. All rights reserved.
+
+This package (the "Software") is licensed, not sold. Perpetio OÜ grants you a
+free, non-exclusive, non-transferable licence to:
+
+  - install and use the Software in personal and commercial projects;
+  - serve its redline.js and redline.mjs files, unmodified or as part of your
+    own build output, to the visitors of websites and apps you build or
+    operate; and
+  - run its redline-mcp command with Redline Cloud or in local mode.
+
+You may not otherwise copy, modify, reverse engineer, redistribute,
+sublicense or sell the Software or any part of it, or use it to build a
+product or service that competes with Redline, except where applicable law
+allows this despite these terms.
+
+This licence covers this package only. Redline Cloud (hosted reviews,
+inviting teammates and guests, and connecting a coding agent to a Cloud
+review) is a separate service, provided under its Terms of Service
+(https://redlinejs.com/terms) and Privacy Policy
+(https://redlinejs.com/privacy), which set its plans and prices.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+PERPETIO OÜ BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
+ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+-------------------------------------------------------------------------------
+
+Redline is built on the source code of annotate.js
+(https://reviewjs.github.io/annotate/), used under this license:
+
+MIT License
+
+Copyright (c) 2026 annotate.js contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

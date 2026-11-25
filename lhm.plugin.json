@@ -1,0 +1,160 @@
+{
+  "identifier": "redlinejs",
+  "name": "RedlineJS",
+  "version": "2.9.0",
+  "description": "Visual website feedback for coding agents. Reviewers comment on the live page; Claude Code, Codex, Cursor or any other MCP client reads each comment with the exact element attached, replies, fixes it and marks it resolved.",
+  "author": "Perpetio OÜ",
+  "authorUrl": "https://redlinejs.com",
+  "homepage": "https://redlinejs.com/docs/mcp",
+  "category": "developer",
+  "icon": "https://redlinejs.com/icon-512.png",
+  "tags": [
+    "website-feedback",
+    "visual-feedback",
+    "design-review",
+    "annotation",
+    "qa",
+    "claude-code",
+    "codex",
+    "cursor"
+  ],
+  "tools": [
+    {
+      "name": "annotate_list_pending",
+      "title": "List open review comments",
+      "description": "Open and in-progress comments reviewers left on the site, oldest first, as Markdown plus JSON. Each names the element it is about: selector, and in development builds the component and source file.",
+      "inputSchema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "page": {
+            "type": "string",
+            "description": "Only comments on this page: a URL path such as /pricing, or a page key."
+          },
+          "includeInProgress": {
+            "type": "boolean",
+            "default": true,
+            "description": "Include comments already marked in progress."
+          },
+          "mentioned": {
+            "type": "boolean",
+            "default": false,
+            "description": "Only comments that mention the agent (for example @Agent) in the comment or a reply."
+          }
+        }
+      }
+    },
+    {
+      "name": "annotate_get_comment",
+      "title": "Read one review comment",
+      "description": "One comment in full detail (styles, position, replies, and the page screenshot when there is one) with its activity history.",
+      "inputSchema": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The comment id from annotate_list_pending."
+          }
+        }
+      }
+    },
+    {
+      "name": "annotate_reply",
+      "title": "Reply to a review comment",
+      "description": "Adds a reply to the comment thread, for example to say what you changed or to ask a question. The reviewer sees it labelled Agent.",
+      "inputSchema": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "text"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 5000
+          },
+          "mentions": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 80
+            },
+            "maxItems": 20,
+            "description": "Names of review members to mention, for example [\"Jane\"]. Write \"@Jane\" in the text too."
+          }
+        }
+      }
+    },
+    {
+      "name": "annotate_set_status",
+      "title": "Change a review comment's status",
+      "description": "in_progress when you start on a comment, resolved when it is done, wont_fix (with a note saying why) when it will not change, open to reopen. The note is posted as a reply first.",
+      "inputSchema": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "status"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "in_progress",
+              "resolved",
+              "wont_fix",
+              "open"
+            ]
+          },
+          "note": {
+            "type": "string",
+            "maxLength": 5000,
+            "description": "Posted as a reply before the status changes. Required for wont_fix."
+          }
+        }
+      }
+    },
+    {
+      "name": "annotate_watch",
+      "title": "Wait for new review comments",
+      "description": "Waits until reviewers leave or change open comments this session has not returned yet, then returns them. Changes the agent made itself do not count. Returns \"No new comments\" on timeout; call it again to keep watching.",
+      "inputSchema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "timeoutSeconds": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 600,
+            "default": 50
+          },
+          "windowSeconds": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 30,
+            "default": 3,
+            "description": "After the first new comment, wait this long to collect more into one batch."
+          },
+          "mentioned": {
+            "type": "boolean",
+            "default": false,
+            "description": "Only comments that mention the agent (for example @Agent) in the comment or a reply."
+          }
+        }
+      }
+    }
+  ]
+}
