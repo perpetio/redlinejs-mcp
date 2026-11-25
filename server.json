@@ -1,0 +1,47 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "com.redlinejs/redline",
+  "title": "RedlineJS",
+  "description": "Visual website feedback for coding agents: read, reply to and resolve comments on live pages",
+  "websiteUrl": "https://redlinejs.com/docs/mcp",
+  "repository": {
+    "url": "https://github.com/perpetio/redlinejs-mcp",
+    "source": "github"
+  },
+  "icons": [
+    {
+      "src": "https://redlinejs.com/icon-512.png",
+      "mimeType": "image/png",
+      "sizes": [
+        "512x512"
+      ]
+    }
+  ],
+  "version": "2.9.1",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "@perpetio/redline",
+      "version": "2.9.1",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "REDLINE_REVIEW",
+          "description": "Redline Cloud review id (rvw_…) for remote mode. Leave unset to keep comments local in .annotate/.",
+          "isRequired": false,
+          "format": "string"
+        },
+        {
+          "name": "REDLINE_INVITE",
+          "description": "The review's agent invite (agt_…) from the Agent tab at app.redlinejs.com. Needed with REDLINE_REVIEW.",
+          "isRequired": false,
+          "isSecret": true,
+          "format": "string"
+        }
+      ]
+    }
+  ]
+}
