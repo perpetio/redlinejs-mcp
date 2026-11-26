@@ -1,0 +1,16 @@
+{
+  "name": "redlinejs",
+  "description": "RedlineJS: visual website feedback for coding agents",
+  "owner": {
+    "name": "Perpetio OÜ",
+    "url": "https://redlinejs.com"
+  },
+  "plugins": [
+    {
+      "name": "redlinejs",
+      "source": "./",
+      "description": "Claude reads, answers and resolves the comments reviewers leave on your live pages, with the exact element attached.",
+      "category": "development"
+    }
+  ]
+}

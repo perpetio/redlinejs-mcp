@@ -67,6 +67,31 @@ Any MCP client that can start a stdio server works. The usual JSON config:
 
 Clients that don't start servers in the project folder (Claude Desktop starts them in `/`) need the folder given explicitly: add `"--data-dir", "/absolute/path/to/project/.annotate"` to `args`, or use the client's `cwd` setting.
 
+## Claude Code plugin
+
+This repository is also a Claude Code plugin that starts the same server, pinned to the current release:
+
+```
+/plugin install redlinejs --marketplace perpetio/redlinejs-mcp
+```
+
+When you enable it, Claude Code asks for a Redline Cloud review and agent invite. Both are optional: leave them empty to use the local review in your project folder.
+
+## Gemini CLI extension
+
+```bash
+gemini extensions install https://github.com/perpetio/redlinejs-mcp
+```
+
+It asks for the same two optional settings.
+
+## What the server runs and sends
+
+- `npx` downloads `@perpetio/redline` from the npm registry and runs its `redline-mcp` server on your computer.
+- **Local mode** (no review or invite): the server starts a review backend on `127.0.0.1:7335`, which the Redline widget on your `localhost` page talks to, and keeps the comments in `.annotate/` in the folder it starts in. Nothing leaves your computer.
+- **Remote mode** (review and invite set): the server connects to Redline Cloud at `https://api.redlinejs.com` with the agent invite, reads that review's comments and sends your agent's replies and status changes.
+- It sends no analytics or telemetry.
+
 ## Tools
 
 | Tool | What it does |

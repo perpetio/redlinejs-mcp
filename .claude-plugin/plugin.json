@@ -1,0 +1,53 @@
+{
+  "name": "redlinejs",
+  "displayName": "RedlineJS",
+  "version": "2.9.1",
+  "description": "Visual website feedback for coding agents: Claude reads, answers and resolves the comments reviewers leave on your live pages, with the exact element attached.",
+  "author": {
+    "name": "Perpetio OÜ",
+    "url": "https://redlinejs.com"
+  },
+  "homepage": "https://redlinejs.com/docs/mcp",
+  "repository": "https://github.com/perpetio/redlinejs-mcp",
+  "keywords": [
+    "website feedback",
+    "design review",
+    "annotations",
+    "visual feedback",
+    "qa"
+  ],
+  "mcpServers": {
+    "redline": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@perpetio/redline@2.9.1"
+      ],
+      "env": {
+        "REDLINE_REVIEW": "${user_config.redline_review}",
+        "REDLINE_INVITE": "${user_config.redline_invite}"
+      }
+    }
+  },
+  "network": {
+    "hosts": [
+      "registry.npmjs.org",
+      "api.redlinejs.com"
+    ]
+  },
+  "userConfig": {
+    "redline_review": {
+      "type": "string",
+      "title": "Redline Cloud review (optional)",
+      "description": "A review id (rvw_…) to work on a shared review in Redline Cloud. Leave empty to use the local review in your project folder.",
+      "default": ""
+    },
+    "redline_invite": {
+      "type": "string",
+      "title": "Redline Cloud agent invite (optional)",
+      "description": "The review's agent token (agt_…), from the review's Agent tab at app.redlinejs.com. Leave empty for local mode.",
+      "sensitive": true,
+      "default": ""
+    }
+  }
+}

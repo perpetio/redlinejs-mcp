@@ -1,0 +1,24 @@
+{
+  "name": "redlinejs",
+  "version": "2.9.1",
+  "description": "Visual website feedback for coding agents: read, reply to and resolve the comments reviewers leave on your live pages, with the exact element attached.",
+  "mcpServers": {
+    "redline": {
+      "command": "npx",
+      "args": ["-y", "@perpetio/redline@latest"]
+    }
+  },
+  "settings": [
+    {
+      "name": "Redline Cloud review",
+      "description": "Optional. A review id (rvw_…) for remote mode. Leave empty to use the local review in your project folder.",
+      "envVar": "REDLINE_REVIEW"
+    },
+    {
+      "name": "Redline Cloud agent invite",
+      "description": "Optional. The review's agent token (agt_…), from the review's Agent tab at app.redlinejs.com. Leave empty for local mode.",
+      "envVar": "REDLINE_INVITE",
+      "sensitive": true
+    }
+  ]
+}
