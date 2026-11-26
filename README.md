@@ -38,6 +38,12 @@ Pin · open · Jane Doe
    codex mcp add redline -- npx -y -p @perpetio/redline@latest redline-mcp
    ```
 
+   **VS Code (GitHub Copilot):** [Install in VS Code](https://vscode.dev/redirect/mcp/install?name=redline&config=%7B%22type%22%3A%22stdio%22%2C%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22-y%22%2C%22-p%22%2C%22%40perpetio%2Fredline%40latest%22%2C%22redline-mcp%22%5D%7D). VS Code shows the server to you before it installs. From a terminal:
+
+   ```bash
+   code --add-mcp '{"name":"redline","type":"stdio","command":"npx","args":["-y","-p","@perpetio/redline@latest","redline-mcp"]}'
+   ```
+
    It starts a review backend for the folder on `127.0.0.1:7335` and keeps its data in `.annotate/` in the project folder. That folder has its own `.gitignore`, so nothing is committed.
 
 2. Open the page you are developing, on `localhost` or `127.0.0.1`, with the Redline snippet:
