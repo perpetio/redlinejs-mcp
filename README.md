@@ -129,3 +129,5 @@ Run `npx -y -p @perpetio/redline@latest redline-mcp doctor` in the same folder (
 The widget, local mode and `redline-mcp` are free to use in personal and commercial projects under the terms in [LICENSE](LICENSE). RedlineJS is not open source. Redline Cloud is a subscription service by Perpetio OÜ, provided under its [Terms of Service](https://redlinejs.com/terms) and [Privacy Policy](https://redlinejs.com/privacy).
 
 Questions: [redlinejs.com/contact](https://redlinejs.com/contact).
+
+[![RedlineJS MCP server](https://mcprush.com/badge/redlinejs-mcp/card.svg)](https://mcprush.com/to/redlinejs-mcp?ref=badge)
